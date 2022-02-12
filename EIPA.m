@@ -1,7 +1,7 @@
 %close all;
 
 nx=50;
-ny=50
+ny=50;
 %ny=137;
 
 % G-matrix, relates the value of a node to all other nodes
@@ -12,7 +12,7 @@ map=@(x,y) y+(x-1)*ny;
 
 for x=1:nx
     for y=1:ny
-        n=map(x,y)
+        n=map(x,y);
         if (x==1||y==1||x==nx||y==ny)
             % For boundaries, G matrix is set to 1             
             G(n,n)=1; 
@@ -44,11 +44,11 @@ EV=zeros(nx,ny);
 for k=1:9
     for x=1:nx
         for y=1:ny
-          n=map(x,y)
+          n=map(x,y);
           EV(x,y)=E(n,k);
           
-        endfor      
-    endfor 
+        end      
+    end 
     subplot(3,3,k);
     surf(EV);  
-endfor
+end
